@@ -73,7 +73,7 @@ for (const file of commandFiles) {
 }
 
 const commands = client.commands.map(({ execute, ...data }) => data);
-const rest = new REST({ version: "9" }).setToken("OTkwMzUwNDYwMjY1MzE2NDQy.G3iUBK.GVYUknz2YcAuQTJCqjD5r4okxLwxbgn0D0YaKs");
+const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
 
 (async () => {
   try {
@@ -119,4 +119,4 @@ client.on("ready", () => {
   });
 });
 
-client.login("OTkwMzUwNDYwMjY1MzE2NDQy.G3iUBK.GVYUknz2YcAuQTJCqjD5r4okxLwxbgn0D0YaKs");
+client.login(process.env.TOKEN);
